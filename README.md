@@ -11,8 +11,8 @@ Click Create the Repository to finalize the process.
 # Step 2: Clone the Repository to my local machine and open in VS Code (ALWAYS use Git to clon)
 Open Windows PowerShell
 Type: "cd " to get to the root directory of the current drive. In this case it's C:\ (CD stands for change directory)
-Copy repo url from GithHub: https://github.com/ssowers2/datafun-04-eda
-Clone the repo by using git commands and pasting its url in the command line: git clone https://github.com/ssowers2/datafun-04-eda
+Copy repo url from GithHub: https://github.com/diamondhelm/datafun-04-eda
+Clone the repo by using git commands and pasting its url in the command line: git clone https://github.com/diamondhelm/datafun-04-eda
 Open VS Code>File>Open Folder>Select the new repo folder (don't double click it)>Click Select Folder
 # Step 3: Add gitignore and requirements.txt files (if starting project from scratch)
 Create new file in root project folder named: ".gitignore" If the name or location is not exact, it will not work.".gitignore" files are used to keep things out of GitHub like .venv and secrets
