@@ -1,68 +1,48 @@
 # datafun-04-eda
-## How to Install and Run the Project
-# Step 1: Create a new repository in Github
-Log in to GitHub.
-Go to Profile>"Your repositories"
-Click the "New" button OR in the top-right corner of GitHub>click the + dropdown menu>Select New repository.
-Provide a brief description of your project.
-Select the Public option so others can view my repository.
-Add a Default README File by checkinh the box for Add a README file. The README file is essential for cloning and initializing a project.
-Click Create the Repository to finalize the process.
-# Step 2: Clone the Repository to my local machine and open in VS Code (ALWAYS use Git to clon)
-Open Windows PowerShell
-Type: "cd " to get to the root directory of the current drive. In this case it's C:\ (CD stands for change directory)
-Copy repo url from GithHub: https://github.com/diamondhelm/datafun-04-eda
-Clone the repo by using git commands and pasting its url in the command line: git clone https://github.com/diamondhelm/datafun-04-eda
-Open VS Code>File>Open Folder>Select the new repo folder (don't double click it)>Click Select Folder
-# Step 3: Add gitignore and requirements.txt files (if starting project from scratch)
-Create new file in root project folder named: ".gitignore" If the name or location is not exact, it will not work.".gitignore" files are used to keep things out of GitHub like .venv and secrets
-Find the .gitignore file in the root of this repo and paste the below contents as a starting point. Contents vary based on project:
-This .gitignore file lists content that does NOT need to be tracked in the project history
-# Python virtual environment folder
-.venv/
+How to Install and Run the Project
+# Step 1. Create a New Repo in GitHub
+Open your browser and log in to your GitHub account.
+Select 'Create New Repository' from the dropdown menu, and name your repo.
+Select the Public option so others can view your repository, and add a README.md file.
+Click the 'Create repository' button to finalize the process.
+Clone your repo to local using your new URL pasted into the following example command.
+git clone https://github.com/youraccount/yourrepo
+Create your .gitignore and requirements.txt files.
+Run the following command from your project route directory to create your virtual environment.
+py -m venv .venv
+Use the following commands to add files to version control. IMPORTANT: Replace the commit message with a clear and descriptive note about what you added or changed.
+git add . # stages changes, adds files to source control
+git commit -m "Add .gitignore and requirements.txt files" # creates a labeled snapshot of staged changes.
+git push -u origin main # updates the remote repository
+Open the newly cloned folder to begin working in it by selecting 'file' 'open folder' navigate to the new repo and select 'open'.
+# Step 2. Activate Your .venv
+Before making any changes to a project, ALWAYS pull the latest changes from the remote repository on GitHub using the following command.
+git pull origin main
+Run the following command to activate your .venv # HINT- You MUST activate your .venv before editing a project.
+.venv\Scripts\activate
+# Step 3. Install Packages Into Your Local Project Virtual Environment
+Ensure your .venv is active, update key packages, and install dependencies from your requirements.txt using the following commands.
+.venv\Scripts\activate
+py -m pip install --upgrade pip setuptools wheel
+py -m pip install -r requirements.txt
+Repeatable Project Workflow
+Follow these steps when starting a new work session on a professional Python project.
 
-# Visual Studio Code settings and workspace folder
-.vscode/
-
-# Compiled Python files
-pycache/
-
-# macOS system files
-.DS_Store
-
-# Jupyter Notebook checkpoint files
-.ipynb_checkpoints
-
-Create new file in root project folder named: "requirements.txt" If the name or location is not exact, it will not work. The contents in this fle will vary. Example: https://github.com/denisecase/pro-analytics-01/blob/main/requirements.txt.
-# Step 4: git add, git commit -m "Message here", and git push -u orgin main
-This is a good time to git-add-commit-push changes to the remote repository in GitHub
-git add .- stages changes, adds files to source control
-git commit -m "Initial commit"- creates a labeled snapshot of staged changes.
-git push -u origin main - updates the remote repository
-After subsequent changes, I can use a simpler version of the last command: git push
-# Step 5: Set Up virtual environment for my local project (ALWAYS create a local virtual environment for project)
-FYI: This is typically done once at the beginning of a project. If it gets messed up, delete .venv and recreate it. Never edit .venv directly. Explore the folder but leave the contents alone!
-
-Open project repo folder in VS Code
-Open terminal and make sure it's set to PowerShell
-Create .venv by typing the command: py -m venv .venv
-Activate .venv by typing the command. This is for Windows OS: .\.venv\Scripts\activate
-Select VS Code interpreter to use .venv: Open the command palette (Ctrl Shift P) and search for "Python: Select Interpreter". Then, select the .venv folder in the project root directory.Now my editor will know about the code in my .venv.
-# Step 6: Install dependencies into .venv that are required for the project
-We do not need to install packages from the Python Standard Library - they are included with our version. The standard library includes helpful packages like pathlib, sqlite3, os, sys, time, and more. See the index.
-
-External dependencies are libraries, packages, and modules beyond the standard library and include common packages like pandas, numpy, seaborn, and matplotlib. These must be installed into our local project virtual environment to use them in our code.
-
-Open project repository in VS Code.
-Open PowerShell terminal.
-Activate the .venv (if not already): .\.venv\Scripts\activate
-Install dependencies listed in requirements.txt file using command: py -m pip install -r requirements.txt
-Example to install single dependency: pip install requests
-Example how to install multiple at once (space between each dependency): pip install numpy pandas requests
-# Step 7: Create a New Jupyter Notebook
-Open project in VS Code: File>Open Folder and select project directory folder.
-Ensure the Jupyter Extension is Installed: Go to Extensions (Ctrl+Shift+X)>Search for "Jupyter">If not installed, click Install on the Jupyter extension by Microsoft.
-Click File>New File>Name file new_notebook.ipynb (or any name ending in .ipynb).
-Press Enter, and VS Code will recognize it as a Jupyter Notebook.
-Open and Edit the Notebook
-Click on new .ipynb file. It will open in Notebook Editor mode. I will see a cell-based editor where I can write and execute Python code.
+# 1. Pull the Latest Changes from GitHub:
+git pull origin main
+# 2. Activate the Project Virtual Environment:
+.venv\Scripts\activate
+# 3. Install Dependencies As Needed:
+py -m pip install -r requirements.txt
+# 4. Run Scripts as needed:
+py myfile.py
+# 5. Run Jupyter Notebooks as needed:
+click the kernel selector in the top-right corner of the notebook editor and choose the interpreter associated with your .venv.
+Click on a cell and press Shift+Enter to execute it and move to the next cell.
+Alternatively, use Ctrl+Enter to execute the current cell without moving.
+Use 'Run ALL' to execute notebooks fully before running git add-commit-push to GitHub.
+Save your notebook periodically to avoid losing progress. Or make sure the File / Autosave option is on.
+# 6. Save your work with git add-commit-push to GitHub:
+git add .
+git commit -m "Add your unique message here."
+git push -u origin main
